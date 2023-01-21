@@ -114,4 +114,18 @@ export class TablesComponent implements OnInit {
       (x: any) => x.checked == true
     );
   }
+
+  selectAll() {
+    this.dataSource.data = this.dataSource.data.map((x: any) => {
+      x.checked = true;
+      return x;
+    });
+  }
+
+  deSelectAll() {
+    this.dataSource.data = this.dataSource.data.map((x: any) => {
+      x.checked = false;
+      return x;
+    });
+  }
 }
